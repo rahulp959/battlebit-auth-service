@@ -1,4 +1,4 @@
-import sentryHandler from './utils/sentryHandler'
+import sentryHandler from '../utils/sentryHandler'
 
 // For some reason, Importing Sentry does not work at all. I'll figure it out another day
 const Sentry = require('@sentry/node');
