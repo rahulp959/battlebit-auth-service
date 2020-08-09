@@ -75,3 +75,9 @@ jobs:
     
     - run: yarn
     - run: yarn serverless:deploy
+      env: 
+        DB_CONN_STRING: ${{ secrets.DB_CONN_STRING }}
+        TOKEN_SIGNATURE: ${{ secrets.TOKEN_SIGNATURE }}
+        TOKEN_LIFETIME: ${{ secrets.TOKEN_LIFETIME }}
+        SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+
