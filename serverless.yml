@@ -20,6 +20,12 @@ functions:
       - http:
           method: post
           path: /signup
+  signin:
+    handler: src/api/signin/index.handler
+    events:
+      - http:
+          method: post
+          path: /signin
 
 package:
   individually: true
