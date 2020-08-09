@@ -1,3 +1,4 @@
+import { hash } from 'bcrypt'
 import sentryHandler from '../../utils/sentryHandler'
 import { getModel } from '../../models/User';
 
@@ -14,7 +15,8 @@ async function lambdaHandler(event) {
   const User = await getModel()
   
   try {
-    const userRecord = await User.create({ username: requestBody.username, password: requestBody.password });
+    const hashedPassword = await hash(requestBody?.password, 10)
+    const userRecord = await User.create({ username: requestBody?.username, password: hashedPassword });
     return {
       statusCode: 201,
       body: JSON.stringify({
@@ -22,7 +24,8 @@ async function lambdaHandler(event) {
       })
     }
   }
-  catch {
+  catch(ex) {
+    console.error(ex)
     return {
       statusCode: 500,
       body: JSON.stringify({
