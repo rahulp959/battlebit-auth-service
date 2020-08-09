@@ -57,22 +57,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     # Install Sentry CLI
-    - name: Create new Sentry release and deploy to Heroku
-      run: |
-        # Install Sentry CLI
-        curl -sL https://sentry.io/get-cli/ | bash
-        
-        # Create new Sentry release
-        export SENTRY_RELEASE=$(sentry-cli releases propose-version)
-        sentry-cli releases propose-version
-        echo $SENTRY_RELEASE
-        sentry-cli releases new $SENTRY_RELEASE -p $SENTRY_PROJECT
-        sentry-cli releases set-commits --auto $SENTRY_RELEASE
-        sentry-cli releases finalize $SENTRY_RELEASE
-        
-        # Create new deploy for this Sentry release
-        sentry-cli releases deploys $SENTRY_RELEASE new -e $SENTRY_DEPLOY_ENVIRONMENT
-    
+    - name: Create Sentry release
+      uses: getsentry/action-release@v1.0.0
+      env:
+        SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+        SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+      with:
+        environment: test
+
     - run: yarn
     - run: yarn serverless:deploy
       env: 
