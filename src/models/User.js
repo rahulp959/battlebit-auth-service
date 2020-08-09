@@ -11,7 +11,8 @@ export async function getModel() {
       // Model attributes are defined here
       username: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       password: {
         type: DataTypes.STRING,
@@ -22,7 +23,7 @@ export async function getModel() {
     });
 
 
-    await model.sync()
+    await model.sync({ alter: true })
   }
 
   return model
