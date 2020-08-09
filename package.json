@@ -49,6 +49,7 @@
   "dependencies": {
     "@sentry/node": "5.20.1",
     "bcrypt": "^5.0.0",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.4",
