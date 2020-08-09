@@ -67,10 +67,14 @@ jobs:
         environment: test
 
     - run: yarn
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_DB_CONN_STRING: ${{ secrets.DB_CONN_STRING }}
+        envkey_TOKEN_SIGNATURE: ${{ secrets.TOKEN_SIGNATURE }}
+        envkey_TOKEN_LIFETIME: ${{ secrets.TOKEN_LIFETIME }}
+        envkey_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+        file_name: .env
     - run: yarn serverless:deploy
-      env: 
-        DB_CONN_STRING: ${{ secrets.DB_CONN_STRING }}
-        TOKEN_SIGNATURE: ${{ secrets.TOKEN_SIGNATURE }}
-        TOKEN_LIFETIME: ${{ secrets.TOKEN_LIFETIME }}
-        SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+
 
