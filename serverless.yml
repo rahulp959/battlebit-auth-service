@@ -3,6 +3,7 @@ service: battlebit-auth-service # Service Name
 
 # Add the serverless-webpack plugin
 plugins:
+  - serverless-dotenv-plugin
   - serverless-webpack
   - serverless-offline
 
@@ -13,8 +14,8 @@ provider:
     service_name: ${self:service}
 
 functions:
-  index:
-    handler: src/index.handler
+  signup:
+    handler: src/api/signup/index.handler
     events:
       - http:
           method: get

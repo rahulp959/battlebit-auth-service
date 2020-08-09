@@ -46,6 +46,10 @@
     "webpack-node-externals": "^2.5.1"
   },
   "dependencies": {
-    "@sentry/node": "5.20.1"
+    "@sentry/node": "5.20.1",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.4",
+    "serverless-dotenv-plugin": "^3.0.0"
   }
 }
