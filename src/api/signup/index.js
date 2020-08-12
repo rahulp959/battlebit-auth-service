@@ -17,7 +17,13 @@ async function lambdaHandler(event) {
   
   try {
     const hashedPassword = await hash(requestBody?.password, 10)
-    const userRecord = await User.create({ username: requestBody?.username, password: hashedPassword });
+    const userRecord = await User.create({
+      username: requestBody?.username, 
+      password: hashedPassword,
+      email: requestBody?.email,
+      bybitRegistration: requestBody?.bybitRegistration,
+      referralCode: requestBody?.referralCode
+    });
     return {
       statusCode: 201,
       body: JSON.stringify({
