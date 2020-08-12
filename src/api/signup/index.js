@@ -27,12 +27,15 @@ async function lambdaHandler(event) {
     return {
       statusCode: 201,
       body: JSON.stringify({
-        username: userRecord.username,
-        email: userRecord.email,
-        bybitRegistration: userRecord.bybitRegistration,
-        referralCode: userRecord.referralCode
-      })
-      // token: generateToken(userRecord)
+        user: {
+          username: userRecord.username,
+          email: userRecord.email,
+          bybitRegistration: userRecord.bybitRegistration,
+          referralCode: userRecord.referralCode
+        },
+        token: generateToken(userRecord)
+      }),
+
     }
   }
   catch(ex) {
