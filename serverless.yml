@@ -20,12 +20,14 @@ functions:
       - http:
           method: post
           path: /signup
+          cors: true
   signin:
     handler: src/api/signin/index.handler
     events:
       - http:
           method: post
           path: /signin
+          cors: true
 
 package:
   individually: true
