@@ -36,7 +36,10 @@ async function lambdaHandler(event) {
       statusCode: 200,
       body: JSON.stringify({
         user: {
-          username: userRecord.username
+          username: userRecord.username,
+          email: userRecord.email,
+          bybitRegistration: userRecord.bybitRegistration,
+          referralCode: userRecord.referralCode
         },
         token: generateToken(userRecord)
       })
