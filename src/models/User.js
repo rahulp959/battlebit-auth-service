@@ -36,7 +36,7 @@ export async function getModel() {
     });
 
 
-    await model.sync({ alter: true })
+    await model.sync()
   }
 
   return model
