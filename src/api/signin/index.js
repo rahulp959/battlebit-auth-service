@@ -1,7 +1,7 @@
 import { compare } from 'bcrypt'
 import sentryHandler from '../../utils/sentryHandler'
 import { getModel } from '../../models/User';
-import generateToken from './generateToken';
+import generateToken from '../../utils/generateToken';
 
 // For some reason, Importing Sentry does not work at all. I'll figure it out another day
 const Sentry = require('@sentry/node');
