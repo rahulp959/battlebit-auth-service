@@ -9,12 +9,25 @@ export async function getModel() {
   if(!model) {
     model = sequelize.define('User', {
       // Model attributes are defined here
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+      },
       username: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
       },
       password: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      bybitRegistration: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      referralCode: {
         type: DataTypes.STRING,
         allowNull: false
       }
