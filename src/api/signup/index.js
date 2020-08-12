@@ -31,8 +31,8 @@ async function lambdaHandler(event) {
         email: userRecord.email,
         bybitRegistration: userRecord.bybitRegistration,
         referralCode: userRecord.referralCode
-      }),
-      token: generateToken(userRecord)
+      })
+      // token: generateToken(userRecord)
     }
   }
   catch(ex) {
