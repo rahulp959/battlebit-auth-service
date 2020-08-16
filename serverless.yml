@@ -15,18 +15,25 @@ provider:
 
 functions:
   signup:
-    handler: src/api/signup/index.handler
+    handler: src/api/auth/signup/index.handler
     events:
       - http:
           method: post
           path: /signup
           cors: true
   signin:
-    handler: src/api/signin/index.handler
+    handler: src/api/auth/signin/index.handler
     events:
       - http:
           method: post
           path: /signin
+          cors: true
+  competitionsList:
+    handler: src/api/competition/list/index.handler
+    events:
+      - http:
+          method: get
+          path: /competitions
           cors: true
 
 package:
