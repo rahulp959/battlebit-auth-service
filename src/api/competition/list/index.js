@@ -12,6 +12,12 @@ async function lambdaHandler() {
   // const requestHeaders = JSON.parse(event.headers);
 
   try {
+    const startDate = new Date();
+    startDate.setHours(startDate.getHours() + 1);
+
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 1);
+
     return {
       statusCode: 200,
       headers: {
@@ -22,12 +28,20 @@ async function lambdaHandler() {
         {
           competitions: [
             {
-              name: "",
-              startDate: "",
-              endDate: "",
-              cryptoType: "",
-              buyIn: "",
-              prizePool: "",
+              name: "Dom's Competition",
+              startDate,
+              endDate,
+              cryptoType: "BTC",
+              buyIn: 0.00055,
+              prizePool: 0.457,
+            },
+            {
+              name: "Ray's Competition",
+              startDate,
+              endDate,
+              cryptoType: "BTC",
+              buyIn: 0.00055,
+              prizePool: 0.457,
             },
           ],
         },
