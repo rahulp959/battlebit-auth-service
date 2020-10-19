@@ -53,6 +53,6 @@
     "pg": "^8.4.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.5",
-    "serverless-dotenv-plugin": "^3.0.0"
+    "serverless-dotenv-plugin": "^3.1.0"
   }
 }
