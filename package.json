@@ -47,7 +47,7 @@
     "webpack-node-externals": "^2.5.2"
   },
   "dependencies": {
-    "@sentry/node": "5.27.2",
+    "@sentry/node": "5.27.3",
     "bcrypt": "^5.0.0",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.4.2",
