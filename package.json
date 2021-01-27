@@ -52,7 +52,7 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.4.0",
+    "sequelize": "^6.5.0",
     "serverless-dotenv-plugin": "^3.1.0"
   }
 }
