@@ -50,7 +50,7 @@
     "@sentry/node": "6.2.5",
     "bcrypt": "^5.0.1",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^8.5.1",
+    "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.2",
     "serverless-dotenv-plugin": "^3.9.0"
